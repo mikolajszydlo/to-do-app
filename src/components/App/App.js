@@ -8,7 +8,7 @@ import {pageContents, listData, settings} from '../../data/dataStore.js';
 class App extends React.Component {
   state = {
     lists: listData || [],
-  }
+  };
 
   getNavbarData() {
     const navbarData = [];
@@ -19,7 +19,6 @@ class App extends React.Component {
         columns: list.columns,
       });
     }
-    console.log(navbarData);
     return navbarData;
   }
 
@@ -34,26 +33,29 @@ class App extends React.Component {
             description,
             image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
             columns: [],
-          }
-        ]
+          },
+        ],
       }
-    ))
+    ));
   }
 
   render() {
     return (
-        <main className={styles.component}>
-          <h1 className={styles.title}>{pageContents.title}</h1>
-          <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
-            <Navbar navbarData={this.getNavbarData()} />
-          <div className={styles.creator}>
-            <Creator text={settings.listCreatorText} action={inputString => this.addList(inputString.split(',', 2)[0], inputString.split(',', 2)[1])}/>
-          </div>    
-          {this.state.lists.map(({key, ...listProp}) => (
-            <List key={key} {...listProp} />
-          ))}
-        </main>
-    )
+      <main className={styles.component}>
+        <h1 className={styles.title}>{pageContents.title}</h1>
+        <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
+        <Navbar navbarData={this.getNavbarData()} />
+        <div className={styles.creator}>
+          <Creator text={settings.listCreatorText} 
+            action={inputString => this.addList(
+              inputString.split(',', 2)[0], 
+              inputString.split(',', 2)[1])}/>
+        </div>    
+        {this.state.lists.map(({key, ...listProp}) => (
+          <List key={key} {...listProp} />
+        ))}
+      </main>
+    );
   }
 }
 

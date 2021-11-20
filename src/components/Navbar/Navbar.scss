@@ -10,12 +10,11 @@
 }
 
 nav {
-  opacity: 0;
-  height: 0;
+  height: auto;
+  display: none;
 
   &.active {
-    opacity: 1;
-    height: auto;
+    display: block;
   }
 }
 
