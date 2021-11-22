@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './App.scss';
-import List from '../List/List.js';
-import Creator from '../Creator/Creator.js';
-import Navbar from '../Navbar/Navbar.js';
-import {pageContents, listData, settings} from '../../data/dataStore.js';
+import List from '../List/ListContainer.js';
+// import Creator from '../Creator/Creator.js';
+// import Navbar from '../Navbar/Navbar.js';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
-  state = {
-    lists: listData || [],
+  static propTypes = {
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
+    lists: PropTypes.array,
   };
 
   getNavbarData() {
@@ -40,19 +42,22 @@ class App extends React.Component {
   }
 
   render() {
+    const {lists, title, subtitle} = this.props;
     return (
       <main className={styles.component}>
-        <h1 className={styles.title}>{pageContents.title}</h1>
-        <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
-        <Navbar navbarData={this.getNavbarData()} />
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.subtitle}>{subtitle}</h2>
+        {/* <Navbar navbarData={this.getNavbarData()} />*/}
+        {/* 
         <div className={styles.creator}>
           <Creator text={settings.listCreatorText} 
             action={inputString => this.addList(
               inputString.split(',', 2)[0], 
               inputString.split(',', 2)[1])}/>
-        </div>    
-        {this.state.lists.map(({key, ...listProp}) => (
-          <List key={key} {...listProp} />
+        </div>  
+        */} 
+        {lists.map(listData => (
+          <List key={listData.id} {...listData} />
         ))}
       </main>
     );
