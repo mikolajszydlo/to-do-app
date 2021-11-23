@@ -4,6 +4,7 @@ import List from '../List/ListContainer.js';
 // import Creator from '../Creator/Creator.js';
 // import Navbar from '../Navbar/Navbar.js';
 import PropTypes from 'prop-types';
+import Search from '../Search/SearchContainer.js';
 
 class App extends React.Component {
   static propTypes = {
@@ -47,6 +48,7 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
+        <Search />
         {/* <Navbar navbarData={this.getNavbarData()} />*/}
         {/* 
         <div className={styles.creator}>
