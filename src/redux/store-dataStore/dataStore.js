@@ -13,11 +13,27 @@ export const settings = {
     defaultText: 'Search...',
     icon: 'search',
   },
+  navigation: {
+    icon: 'cat',
+  },
 };
 
 export const pageContents = {
-  title: 'My first React app',
-  subtitle: 'A simple to-do app, with lists, columns and cards',
+  home: {
+    title: 'My first React app',
+    subtitle: 'A simple to-do app, with lists, columns and cards',
+  },
+  info: {
+    title: 'How it works',
+    image: 'https://images.pexels.com/photos/4009017/pexels-photo-4009017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum sequi quo mollitia illum commodi ab aspernatur. Deserunt commodi explicabo numquam.',
+  },
+  faq: {
+    title: 'FAQ',
+    image: 'https://images.pexels.com/photos/4913769/pexels-photo-4913769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum sequi quo mollitia illum commodi ab aspernatur.',
+  },
+
 };
 
 const lists = [

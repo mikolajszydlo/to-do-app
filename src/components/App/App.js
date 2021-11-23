@@ -1,69 +1,20 @@
 import React from 'react';
-import styles from './App.scss';
-import List from '../List/ListContainer.js';
-// import Creator from '../Creator/Creator.js';
-// import Navbar from '../Navbar/Navbar.js';
-import PropTypes from 'prop-types';
-import Search from '../Search/SearchContainer.js';
+import Home from '../Home/HomeContainer';
+import Info from '../Info/Info.js';
+import Faq from '../Faq/Faq.js';
+import MainLayout from '../MainLayout/MainLayout';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-class App extends React.Component {
-  static propTypes = {
-    title: PropTypes.node,
-    subtitle: PropTypes.node,
-    lists: PropTypes.array,
-  };
-
-  getNavbarData() {
-    const navbarData = [];
-
-    for(const list of this.state.lists){
-      navbarData.push({
-        title: list.title,
-        columns: list.columns,
-      });
-    }
-    return navbarData;
-  }
-
-  addList(title, description) {
-    this.setState(state => (
-      {
-        lists: [
-          ...state.lists,
-          {
-            key: state.lists.length ? state.lists[state.lists.length-1].key+1 : 0,
-            title,
-            description,
-            image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
-            columns: [],
-          },
-        ],
-      }
-    ));
-  }
-
-  render() {
-    const {lists, title, subtitle} = this.props;
-    return (
-      <main className={styles.component}>
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
-        {/* <Navbar navbarData={this.getNavbarData()} />*/}
-        {/* 
-        <div className={styles.creator}>
-          <Creator text={settings.listCreatorText} 
-            action={inputString => this.addList(
-              inputString.split(',', 2)[0], 
-              inputString.split(',', 2)[1])}/>
-        </div>  
-        */} 
-        {lists.map(listData => (
-          <List key={listData.id} {...listData} />
-        ))}
-      </main>
-    );
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <MainLayout>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/info' component={Info} /> 
+        <Route exact path='/faq' component={Faq} />
+      </Switch>
+    </MainLayout>
+  </BrowserRouter>
+);
 
 export default App;
