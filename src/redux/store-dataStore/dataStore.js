@@ -13,6 +13,10 @@ export const settings = {
     defaultText: 'Search...',
     icon: 'search',
   },
+  results: {
+    foundCardsTitle: 'Found Cards:',
+    icon: 'poll',
+  },
   navigation: {
     icon: 'cat',
   },
@@ -41,6 +45,18 @@ const lists = [
     id: 'list-1',
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-2',
+    title: 'Current task',
+    description: 'Things to be done now!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-3',
+    title: 'Maybe/Future',
+    description: 'Interesting things I want to do in the future!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];

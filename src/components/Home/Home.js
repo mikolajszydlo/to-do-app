@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Home.scss';
-import List from '../List/ListContainer.js';
+import ListLink from '../ListLink/ListLink.js';
+import Container from '../Container/Container';
 // import Creator from '../Creator/Creator.js';
 // import Navbar from '../Navbar/Navbar.js';
 import PropTypes from 'prop-types';
-import Search from '../Search/SearchContainer.js';
 
 class Home extends React.Component {
   static propTypes = {
@@ -49,7 +49,6 @@ class Home extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
         {/* <Navbar navbarData={this.getNavbarData()} />*/}
         {/* 
         <div className={styles.creator}>
@@ -58,10 +57,12 @@ class Home extends React.Component {
               inputString.split(',', 2)[0], 
               inputString.split(',', 2)[1])}/>
         </div>  
-        */} 
-        {lists.map(listData => (
-          <List key={listData.id} {...listData} />
-        ))}
+        */}
+        <Container>
+          {lists.map(listData => (
+            <ListLink key={listData.id} {...listData} />
+          ))}
+        </Container>
       </main>
     );
   }
