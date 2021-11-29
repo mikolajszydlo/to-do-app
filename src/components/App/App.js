@@ -5,7 +5,7 @@ import Faq from '../Faq/Faq.js';
 import MainLayout from '../MainLayout/MainLayout';
 import styles from './App.scss';
 import List from '../List/ListContainer';
-import {AnimatedSwitch} from 'react-router-transition';
+import { AnimatedSwitch } from 'react-router-transition';
 import { BrowserRouter, Route } from 'react-router-dom';
 import SearchResults from '../SearchResults/SearchResultsContainer.js';
 

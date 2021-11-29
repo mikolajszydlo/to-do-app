@@ -30,6 +30,10 @@
   }
 }
 
+.cards {
+  padding: ($base-size / 2) 0;
+}
+
 .icon > * {
   padding-right: $base-size;
   color: $color-warning;

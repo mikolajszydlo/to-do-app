@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './Home.scss';
 import ListLink from '../ListLink/ListLink.js';
 import Container from '../Container/Container';
-// import Creator from '../Creator/Creator.js';
-// import Navbar from '../Navbar/Navbar.js';
 import PropTypes from 'prop-types';
 
 class Home extends React.Component {
@@ -44,20 +42,11 @@ class Home extends React.Component {
 
   render() {
     const {lists, title, subtitle} = this.props;
-    
+
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        {/* <Navbar navbarData={this.getNavbarData()} />*/}
-        {/* 
-        <div className={styles.creator}>
-          <Creator text={settings.listCreatorText} 
-            action={inputString => this.addList(
-              inputString.split(',', 2)[0], 
-              inputString.split(',', 2)[1])}/>
-        </div>  
-        */}
         <Container>
           {lists.map(listData => (
             <ListLink key={listData.id} {...listData} />

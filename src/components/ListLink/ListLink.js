@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ListLink.scss';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import {settings} from '../../redux/store-dataStore/dataStore.js';
+import { Link } from 'react-router-dom';
+import { settings } from '../../redux/store-dataStore/dataStore.js';
 import ReactHtmlParser from 'react-html-parser';
 
 const ListLink = ({id, title, image, description}) => (

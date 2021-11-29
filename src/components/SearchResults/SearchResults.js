@@ -10,11 +10,12 @@ class SearchResults extends React.Component {
 
   static propTypes = {
     cards: PropTypes.array, 
+    moveCard: PropTypes.func,
   };
   
   render () {
     const {cards} = this.props;
-
+    
     return (
       <Container>
         <section className={styles.component}>
